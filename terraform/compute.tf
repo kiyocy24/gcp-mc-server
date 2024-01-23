@@ -1,6 +1,6 @@
 module "gce-container" {
   source           = "terraform-google-modules/container-vm/google"
-  version          = "~> 2.0"
+  version          = "~> 3.1"
   cos_image_family = "stable"
   restart_policy   = "Always"
 
@@ -9,7 +9,7 @@ module "gce-container" {
     env = [
       {
         name  = "PLAYERS"
-        value = "4"
+        value = "16"
       },
       {
         name  = "PORT"
@@ -20,7 +20,25 @@ module "gce-container" {
         value = "false"
       },
     ]
+    volumeMounts = [
+      {
+        mountPath = "/Palworld"
+        name      = "palworld-volume"
+        readOnly  = false
+      },
+    ]
   }
+
+  volumes = [
+    {
+      name = "palworld-volume"
+
+      gcePersistentDisk = {
+        pdName = "palworld-disk"
+        fsType = "ext4"
+      }
+    },
+  ]
 }
 
 resource "google_compute_instance" "pw_server" {
