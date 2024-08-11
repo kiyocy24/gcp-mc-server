@@ -9,11 +9,11 @@ module "gce-container" {
     env = [
       {
         name  = "TYPE"
-        value = "SPIGOT"
+        value = var.server_type
       },
       {
         name  = "VERSION"
-        value = "1.19.3"
+        value = var.server_version
       },
       {
         name  = "EULA"

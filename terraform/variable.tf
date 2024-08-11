@@ -1,24 +1,27 @@
 variable "project" {
-  type    = string
-  default = "sample" # FIXME or create terraform.tfvars file
+  type = string
 }
 
 variable "region" {
-  type    = string
-  default = "asia-northeast1"
+  type = string
 }
 
 variable "zone" {
-  type    = string
-  default = "asia-northeast1-a"
+  type = string
 }
 
 variable "machine_type" {
-  type    = string
-  default = "n1-standard-1"
+  type = string
 }
 
 variable "network_tags" {
-  type    = list(string)
-  default = ["minecraft"]
+  type = list(string)
+}
+
+variable "server_type" {
+  type = string
+}
+
+variable "server_version" {
+  type = string
 }
