@@ -1,0 +1,7 @@
+project = "<YOUR PROJECT ID>"
+region = "asia-northeast1"
+zone = "asia-northeast1-a"
+machine_type = "n1-standard-1"
+network_tags = ["minecraft"]
+server_type = "SPIGOT"
+server_version = "1.21"
