@@ -1,27 +1,27 @@
 variable "project" {
-  type    = string
+  type = string
 }
 
 variable "region" {
-  type    = string
+  type = string
 }
 
 variable "zone" {
-  type    = string
+  type = string
 }
 
 variable "machine_type" {
-  type    = string
+  type = string
 }
 
 variable "network_tags" {
-  type    = list(string)
+  type = list(string)
 }
 
 variable "server_type" {
-  type    = string
+  type = string
 }
 
 variable "server_version" {
-  type    = string
+  type = string
 }
